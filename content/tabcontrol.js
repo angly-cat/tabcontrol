@@ -26,9 +26,9 @@ onLoad:function() {
 	window.addEventListener("SSWindowStateBusy", gTabControl.onSessionBusy, false);
 	window.addEventListener("SSWindowStateReady", gTabControl.onSessionReady, false);
 
-	var searchbar=document.getElementById('searchbar');
+	/*var searchbar=document.getElementById('searchbar');
 	gTabControl.origHandleSearchCommand=searchbar.handleSearchCommand;
-	searchbar.handleSearchCommand=gTabControl.handleSearchCommand;
+	searchbar.handleSearchCommand=gTabControl.handleSearchCommand;*/
 },
 
 onUnload:function() {
