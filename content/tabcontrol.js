@@ -54,10 +54,37 @@ onTabClose:function(aEvent) {
 	// If we're configured to, focus left tab.
 	if (gTabControl.getPref('bool', 'tabcontrol.focusLeftOnClose')
 	    && gBrowser.mCurrentTab == tab
-	    && tab._tPos > 0
-		// TODO: Not if left tab is a pinned app tab.
+	    // If there are tabs to select.
+	    && gBrowser.visibleTabs.length
 	) {
-		gBrowser.selectTabAtIndex(tab._tPos - 1);
+		// gBrowser.visibleTabs is an array of all visible tabs, i.e. all pinned tabs and all tabs from the current tab group.
+
+		// Each tab has _tPos index (>= 0). All pinned tabs has _tPos indexes started from 0: [0..n],
+		// then tabs from the first tab group has indexes [n+1..m] etc.
+		var currestPos = tab._tPos,
+		    visibleTabs = gBrowser.visibleTabs,
+		    tabs = gBrowser.tabs;
+		// If closed tab was non-pinned and there is non-pinned tab to the left
+		// or closed tab was pinned and there is pinned tab to the left.
+		if (currestPos > 0
+		    && !tabs[currestPos - 1].hidden
+		    && (tab.getAttribute('pinned') || !tabs[currestPos - 1].getAttribute('pinned'))
+		) {
+			// Focus on the tab to the left.
+			gBrowser.selectedTab = tabs[currestPos - 1];
+		// Else if closed tab was the most left pinned/non-pinned and there is pinned/non-pinned tab to the right.
+		} else if (!tabs[currestPos].hidden) {
+			// Focus on the next pinned/non-pinned tab.
+			gBrowser.selectedTab = tabs[currestPos];
+		// Else if closed tab was the last non-pinned tab.
+		} else if (visibleTabs[visibleTabs.length - 1].getAttribute('pinned')) {
+			// Focus on the most left non-pinned tab.
+			gBrowser.selectedTab = visibleTabs[visibleTabs.length - 1];
+		// Else if closed tab was the last pinned tab.
+		} else {
+			// Focus on the most right pinned tab.
+			gBrowser.selectedTab = visibleTabs[0];
+		}
 	}
 },
 
