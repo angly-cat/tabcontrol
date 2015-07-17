@@ -5,7 +5,7 @@ prefObj: Components.classes['@mozilla.org/preferences-service;1']
          .getService(Components.interfaces.nsIPrefBranch),
 sessionRestoring: false,
 tabId: 0,
-version: '0.5.5.2',
+version: '0.6.6.1',
 
 /****************************** EVENT LISTENERS ******************************/
 

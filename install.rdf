@@ -3,11 +3,12 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>{39952c40-5197-11da-8cd6-0800200c9a66}</em:id>
     <em:name>Tab Control</em:name>
-    <em:version>0.5.5</em:version>
+    <em:version>0.6.6.1</em:version>
     <em:type>2</em:type>
 
     <em:creator>Anthony Lieuallen</em:creator>
-    <em:homepageURL>http://trac.arantius.com/wiki/Extensions/TabControl</em:homepageURL>
+    <em:developer>Angly Cat</em:developer>
+    <em:homepageURL>https://github.com/zeird/tabcontrol</em:homepageURL>
     <em:description>Take control of your tabs!</em:description>
     <em:contributor>Based loosely on Tab Mix Plus</em:contributor>
 
@@ -18,7 +19,7 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>4.0b12</em:minVersion>
-        <em:maxVersion>4.0.*</em:maxVersion>
+        <em:maxVersion>39.*</em:maxVersion>
       </Description>
     </em:targetApplication>
   </Description>
