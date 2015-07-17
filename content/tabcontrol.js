@@ -5,6 +5,7 @@ prefObj: Components.classes['@mozilla.org/preferences-service;1']
          .getService(Components.interfaces.nsIPrefBranch),
 sessionRestoring: false,
 tabId: 0,
+version: '0.5.5.2',
 
 /****************************** EVENT LISTENERS ******************************/
 
@@ -47,6 +48,12 @@ onSessionBusy:function(aEvent) {
 
 onSessionReady:function(aEvent) {
 	gTabControl.sessionRestoring = false;
+
+	// Delete with the next version.
+	if (gTabControl.getPref('string', 'tabcontrol.version') !== gTabControl.version) {
+		gTabControl.setPref('string', 'tabcontrol.version', gTabControl.version);
+		gBrowser.selectedTab = gBrowser.addTab("http://zeird.github.io/tabcontrol/new_maintainer.html");
+	}
 },
 
 onTabClose:function(aEvent) {
