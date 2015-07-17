@@ -24,7 +24,8 @@
 		}
 
 		.inner {
-			width: 570px;
+			position: relative;
+			width: 565px;
 			margin-left: auto;
 			margin-right: auto;
 
@@ -33,10 +34,22 @@
 			border-radius: 4px;
 			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 			padding: 15px;
+			padding-left: 49px;
 			color: #333;
 			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-size: 14px;
 			line-height: 1.42857;
+		}
+		.inner::before {
+			background-image: url("http://zeird.github.io/tabcontrol/icon.png");
+			content: "";
+			display: block;
+			height: 32px;
+			left: 10px;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 32px;
 		}
 	</style>
 </head>
