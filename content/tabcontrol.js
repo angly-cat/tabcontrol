@@ -104,7 +104,7 @@ onTabOpen:function(aEvent) {
 	if (gTabControl.getPref('bool', 'tabcontrol.posRightOnAdd')) {
 		var afterTab=gBrowser.mCurrentTab.nextSibling;
 
-		if (gTabControl.getPref('bool', 'tabcontrol.leftRightGroup')) {
+		/*if (gTabControl.getPref('bool', 'tabcontrol.leftRightGroup')) {
 			gTabControl.setTabId(gBrowser.mCurrentTab);
 			gTabControl.setTabId(tab);
 
@@ -118,7 +118,7 @@ onTabOpen:function(aEvent) {
 			) {
 				afterTab=afterTab.nextSibling;
 			}
-		}
+		}*/
 
 		gBrowser.moveTabTo(tab, afterTab._tPos);
 
