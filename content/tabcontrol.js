@@ -4,8 +4,6 @@ var gTabControl={
 prefObj: Components.classes['@mozilla.org/preferences-service;1']
          .getService(Components.interfaces.nsIPrefBranch),
 sessionRestoring: false,
-tabId: 0,
-version: '0.6.6.1',
 
 /****************************** EVENT LISTENERS ******************************/
 
@@ -20,9 +18,6 @@ onLoad:function() {
 	var container = gBrowser.tabContainer;
 	container.addEventListener("TabClose", gTabControl.onTabClose, false);
 	container.addEventListener("TabOpen", gTabControl.onTabOpen, false);
-	container.addEventListener("TabSelect", gTabControl.changeTab, false);
-
-	gBrowser.addTabsProgressListener(gTabControl.tabProgressListener);
 
 	window.addEventListener("SSWindowStateBusy", gTabControl.onSessionBusy, false);
 	window.addEventListener("SSWindowStateReady", gTabControl.onSessionReady, false);
@@ -37,7 +32,6 @@ onUnload:function() {
 	var container = gBrowser.tabContainer;
 	container.removeEventListener("TabClose", gTabControl.onTabClose, false);
 	container.removeEventListener("TabOpen", gTabControl.onTabOpen, false);
-	container.removeEventListener("TabSelect", gTabControl.changeTab, false);
 	window.removeEventListener("SSWindowStateBusy", gTabControl.onSessionBusy, false);
 	window.removeEventListener("SSWindowStateReady", gTabControl.onSessionReady, false);
 },
@@ -48,12 +42,6 @@ onSessionBusy:function(aEvent) {
 
 onSessionReady:function(aEvent) {
 	gTabControl.sessionRestoring = false;
-
-	// Delete with the next version.
-	if (gTabControl.getPref('string', 'tabcontrol.version') !== gTabControl.version) {
-		gTabControl.setPref('string', 'tabcontrol.version', gTabControl.version);
-		gBrowser.selectedTab = gBrowser.addTab("http://zeird.github.io/tabcontrol/new_maintainer.html");
-	}
 },
 
 onTabClose:function(aEvent) {
@@ -106,23 +94,6 @@ onTabOpen:function(aEvent) {
 		if (    tab.owner &&  gTabControl.getPref('bool', 'extensions.tabcontrol.insertUnrelatedAfterCurrent')
 		    || !tab.owner && !gTabControl.getPref('bool', 'tabcontrol.leftRightGroup')) {
 			var afterTab=gBrowser.mCurrentTab.nextSibling;
-
-			/*if (gTabControl.getPref('bool', 'tabcontrol.leftRightGroup')) {
-				gTabControl.setTabId(gBrowser.mCurrentTab);
-				gTabControl.setTabId(tab);
-
-				var tabId=gTabControl.getTabId(gBrowser.mCurrentTab);
-				tab.setAttribute('tabControlRefId', tabId);
-
-				while (
-					afterTab != tab
-					&& afterTab.getAttribute('tabControlRefId')==tabId
-					&& afterTab.nextSibling
-				) {
-					afterTab=afterTab.nextSibling;
-				}
-			}*/
-
 			gBrowser.moveTabTo(tab, afterTab._tPos);
 
 			// Compatibility fix with CoLoUnREaDTabs. (#152)
@@ -133,38 +104,6 @@ onTabOpen:function(aEvent) {
 },
 
 /****************************** TAB MANIPULATION *****************************/
-
-clearTabId:function(aTab, aBrowser) {
-	var browser = aBrowser || gBrowser.getBrowserForTab(aTab);
-	browser.removeAttribute('tabControlId');
-},
-
-getTabId:function(aTab) {
-	var browser = gBrowser.getBrowserForTab(aTab);
-	return browser.getAttribute('tabControlId');
-},
-
-setTabId:function(aTab) {
-	var browser = gBrowser.getBrowserForTab(aTab);
-	if (!browser.hasAttribute('tabControlId')) {
-		browser.setAttribute('tabControlId', ++gTabControl.tabId);
-	}
-},
-
-changeTab:function(aEvent) {
-	// #433 Break left-to-right groupings when selecting tabs.
-	if (gTabControl.getPref('bool', 'browser.tabs.loadInBackground')) {
-		for (var i=0, tab=null; tab=gBrowser.tabs[i]; i++) {
-			gTabControl.clearTabId(tab);
-		}
-	}
-},
-
-tabProgressListener:{
-	onLocationChange:function(aBrowser, aWebProgress, aRequest, aLocation) {
-		gTabControl.clearTabId(null, aBrowser);
-	}
-},
 
 handleSearchCommand:function(aEvent) {
 	var searchbar=document.getElementById('searchbar');
