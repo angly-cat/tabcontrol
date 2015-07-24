@@ -102,7 +102,9 @@ onTabOpen:function(aEvent) {
 
 	//shift the new tab into position
 	if (gTabControl.getPref('bool', 'browser.tabs.insertRelatedAfterCurrent')) {
-		if (gTabControl.getPref('bool', 'extensions.tabcontrol.insertUnrelatedAfterCurrent') && tab.owner) {
+		// Tabs with owner property - unrelated, without - related.
+		if (    tab.owner &&  gTabControl.getPref('bool', 'extensions.tabcontrol.insertUnrelatedAfterCurrent')
+		    || !tab.owner && !gTabControl.getPref('bool', 'tabcontrol.leftRightGroup')) {
 			var afterTab=gBrowser.mCurrentTab.nextSibling;
 
 			/*if (gTabControl.getPref('bool', 'tabcontrol.leftRightGroup')) {
