@@ -22,13 +22,16 @@
     />
     <separator class="thin" />
 
-    <checkbox id='posRightOnAdd' prefstring='tabcontrol.posRightOnAdd'
-      label='&tabcontrol.posRight;'
+    <checkbox id='posRightOnAdd' prefstring='browser.tabs.insertRelatedAfterCurrent'
+      label='&tabcontrol.insertRelatedAfterCurrent;'
     />
     <hbox>
       <box width='15'/>
       <checkbox id='leftRightGroup' prefstring='tabcontrol.leftRightGroup'
         label='&tabcontrol.leftRightGroup;'
+      />
+      <checkbox id='leftRightGroup' prefstring='extensions.tabcontrol.insertUnrelatedAfterCurrent'
+        label='&tabcontrol.insertUnrelatedAfterCurrent;'
       />
     </hbox>
     <separator class="thin" />

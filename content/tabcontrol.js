@@ -101,29 +101,31 @@ onTabOpen:function(aEvent) {
 	var tab = aEvent.target;
 
 	//shift the new tab into position
-	if (gTabControl.getPref('bool', 'tabcontrol.posRightOnAdd')) {
-		var afterTab=gBrowser.mCurrentTab.nextSibling;
+	if (gTabControl.getPref('bool', 'browser.tabs.insertRelatedAfterCurrent')) {
+		if (gTabControl.getPref('bool', 'extensions.tabcontrol.insertUnrelatedAfterCurrent') && tab.owner) {
+			var afterTab=gBrowser.mCurrentTab.nextSibling;
 
-		/*if (gTabControl.getPref('bool', 'tabcontrol.leftRightGroup')) {
-			gTabControl.setTabId(gBrowser.mCurrentTab);
-			gTabControl.setTabId(tab);
+			/*if (gTabControl.getPref('bool', 'tabcontrol.leftRightGroup')) {
+				gTabControl.setTabId(gBrowser.mCurrentTab);
+				gTabControl.setTabId(tab);
 
-			var tabId=gTabControl.getTabId(gBrowser.mCurrentTab);
-			tab.setAttribute('tabControlRefId', tabId);
+				var tabId=gTabControl.getTabId(gBrowser.mCurrentTab);
+				tab.setAttribute('tabControlRefId', tabId);
 
-			while (
-				afterTab != tab
-				&& afterTab.getAttribute('tabControlRefId')==tabId
-				&& afterTab.nextSibling
-			) {
-				afterTab=afterTab.nextSibling;
-			}
-		}*/
+				while (
+					afterTab != tab
+					&& afterTab.getAttribute('tabControlRefId')==tabId
+					&& afterTab.nextSibling
+				) {
+					afterTab=afterTab.nextSibling;
+				}
+			}*/
 
-		gBrowser.moveTabTo(tab, afterTab._tPos);
+			gBrowser.moveTabTo(tab, afterTab._tPos);
 
-		// Compatibility fix with CoLoUnREaDTabs. (#152)
-		tab.removeAttribute('selected');
+			// Compatibility fix with CoLoUnREaDTabs. (#152)
+			tab.removeAttribute('selected');
+		}
 	}
 
 },
