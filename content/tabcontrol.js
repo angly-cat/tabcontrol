@@ -93,8 +93,7 @@ onTabOpen:function(aEvent) {
 		// Tabs with owner property - unrelated, without - related.
 		if (    tab.owner &&  gTabControl.getPref('bool', 'extensions.tabcontrol.insertUnrelatedAfterCurrent')
 		    || !tab.owner && !gTabControl.getPref('bool', 'tabcontrol.leftRightGroup')) {
-			var afterTab=gBrowser.mCurrentTab.nextSibling;
-			gBrowser.moveTabTo(tab, afterTab._tPos);
+			gBrowser.moveTabTo(tab, gBrowser.mCurrentTab.nextSibling._tPos);
 
 			// Compatibility fix with CoLoUnREaDTabs. (#152)
 			tab.removeAttribute('selected');
