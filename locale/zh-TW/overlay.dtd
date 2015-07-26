@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "分頁控制">
 <!ENTITY tabcontrol.options "選項">
 <!ENTITY tabcontrol.focusLeft "當關閉本分頁時移到左分頁">
-<!ENTITY tabcontrol.posRight "放置新分頁到本分頁的右面">
 <!ENTITY tabcontrol.leftRightGroup "在一個從左到右的群組內">
 <!ENTITY tabcontrol.showQuitWarning "Show 'Save and Quit' warning dialog">
 <!ENTITY tabcontrol.searchInNewTab "於新分頁開啟所有搜尋">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "一個，在分頁列最右面">
 <!ENTITY tabcontrol.closeButtons.all "多個，在所有分頁">
 <!ENTITY tabcontrol.closeButtons.none "無">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

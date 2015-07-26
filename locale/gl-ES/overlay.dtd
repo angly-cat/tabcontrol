@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Control de separadores">
 <!ENTITY tabcontrol.options "Opcións">
 <!ENTITY tabcontrol.focusLeft "Enfocar o separador esquerdo ao pechar o actual.">
-<!ENTITY tabcontrol.posRight "Colocar os separadores novos á dereita do actual.">
 <!ENTITY tabcontrol.leftRightGroup "In a left-to-right group">
 <!ENTITY tabcontrol.showQuitWarning "Show 'Save and Quit' warning dialog">
 <!ENTITY tabcontrol.searchInNewTab "Open all searches in a new tab">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "Un, no separador da dereita">
 <!ENTITY tabcontrol.closeButtons.all "Moitos, en todos os separadores">
 <!ENTITY tabcontrol.closeButtons.none "Ningún">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

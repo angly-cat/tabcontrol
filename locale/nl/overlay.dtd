@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Tab Control">
 <!ENTITY tabcontrol.options "Opties">
 <!ENTITY tabcontrol.focusLeft "Focussen op linkertabblad wanneer de huidige tabblad wordt gesloten">
-<!ENTITY tabcontrol.posRight "Nieuwe tabbladen rechts van de huidige tabblad plaatsen">
 <!ENTITY tabcontrol.leftRightGroup "in een links-naar-rechts-groep">
 <!ENTITY tabcontrol.showQuitWarning "Waarschuwingsvenster ‘Opslaan en afsluiten’ weergeven">
 <!ENTITY tabcontrol.searchInNewTab "Alle zoekopdrachten in een nieuw tabblad openen">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "Eén, aan rechterzijde">
 <!ENTITY tabcontrol.closeButtons.all "Veel, op alle tabbladen">
 <!ENTITY tabcontrol.closeButtons.none "Geen">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

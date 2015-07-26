@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Tab Control">
 <!ENTITY tabcontrol.options "Options">
 <!ENTITY tabcontrol.focusLeft "À la fermeture de l'onglet courant, activer l'onglet de gauche">
-<!ENTITY tabcontrol.posRight "Positionner les nouveaux onglets à la droite de l'onglet courant">
 <!ENTITY tabcontrol.leftRightGroup "Dans un groupe de gauche à droite">
 <!ENTITY tabcontrol.showQuitWarning "Afficher 'Sauvegarder et quitter'">
 <!ENTITY tabcontrol.searchInNewTab "Ouvrir toutes les recherches dans un nouvel onglet">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "Un, sur la droite de l'onglet">
 <!ENTITY tabcontrol.closeButtons.all "Sur tous les onglets">
 <!ENTITY tabcontrol.closeButtons.none "Aucun">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

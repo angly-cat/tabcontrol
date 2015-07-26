@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Tab Control">
 <!ENTITY tabcontrol.options "Options">
 <!ENTITY tabcontrol.focusLeft "Focus left tab when closing current tab">
-<!ENTITY tabcontrol.posRight "Position new tabs to right of current tab">
 <!ENTITY tabcontrol.leftRightGroup "In a left-to-right group">
 <!ENTITY tabcontrol.showQuitWarning "Show 'Save and Quit' warning dialog">
 <!ENTITY tabcontrol.searchInNewTab "Open all searches in a new tab">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "One, on the right">
 <!ENTITY tabcontrol.closeButtons.all "Many, on all tabs">
 <!ENTITY tabcontrol.closeButtons.none "None">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Tab Control">
 <!ENTITY tabcontrol.options "Inställningar">
 <!ENTITY tabcontrol.focusLeft "Fokusera fliken till vänster när aktuell flik stängs">
-<!ENTITY tabcontrol.posRight "Positionera nya flikar till höger om aktuell flik">
 <!ENTITY tabcontrol.leftRightGroup "I en från-vänster-till-höger-grupp">
 <!ENTITY tabcontrol.showQuitWarning "Visa varningsdialogen &quot;Spara och avsluta&quot;">
 <!ENTITY tabcontrol.searchInNewTab "Öppna alla sökningar i en ny flik">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "En, ute till höger">
 <!ENTITY tabcontrol.closeButtons.all "Flera, på alla flikar">
 <!ENTITY tabcontrol.closeButtons.none "Ingen">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

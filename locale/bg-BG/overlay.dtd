@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Tab Control - управление на подпрозорци">
 <!ENTITY tabcontrol.options "Настройки">
 <!ENTITY tabcontrol.focusLeft "Фокусиране на ляв подпрозорец при затваряне на текущия">
-<!ENTITY tabcontrol.posRight "Поставяне на нови подпрозорци в дясно от текущия">
 <!ENTITY tabcontrol.leftRightGroup "In a left-to-right group">
 <!ENTITY tabcontrol.showQuitWarning "Show 'Save and Quit' warning dialog">
 <!ENTITY tabcontrol.searchInNewTab "Open all searches in a new tab">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "Един, на десния подпрозорец">
 <!ENTITY tabcontrol.closeButtons.all "Много, на всички подпрозорци">
 <!ENTITY tabcontrol.closeButtons.none "Нито един">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

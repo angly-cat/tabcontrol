@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Fanebladskontrol">
 <!ENTITY tabcontrol.options "Indstillinger">
 <!ENTITY tabcontrol.focusLeft "Fokusér på venstre faneblad ved lukning af nuværende faneblad">
-<!ENTITY tabcontrol.posRight "Placer nye faneblade til højre for nuværende faneblad">
 <!ENTITY tabcontrol.leftRightGroup "I en venstre-til-højre-gruppe">
 <!ENTITY tabcontrol.showQuitWarning "Show 'Save and Quit' warning dialog">
 <!ENTITY tabcontrol.searchInNewTab "Åbn alle søgninger i et nyt faneblad">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "En, til højre">
 <!ENTITY tabcontrol.closeButtons.all "Mange, på alle faneblade">
 <!ENTITY tabcontrol.closeButtons.none "Ingen">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

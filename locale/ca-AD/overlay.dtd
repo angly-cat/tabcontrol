@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Tab Control">
 <!ENTITY tabcontrol.options "Opcions">
 <!ENTITY tabcontrol.focusLeft "Enfoca la pestanya de l&apos;esquerra quan tanqui la pestanya actual">
-<!ENTITY tabcontrol.posRight "Posicionar les noves pestanyes a la dreta de la pestanya actual">
 <!ENTITY tabcontrol.leftRightGroup "In a left-to-right group">
 <!ENTITY tabcontrol.showQuitWarning "Show 'Save and Quit' warning dialog">
 <!ENTITY tabcontrol.searchInNewTab "Open all searches in a new tab">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "Un, a la dreta">
 <!ENTITY tabcontrol.closeButtons.all "Tots, a totes les pestanyes">
 <!ENTITY tabcontrol.closeButtons.none "Cap">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

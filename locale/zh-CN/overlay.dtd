@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "标签控制">
 <!ENTITY tabcontrol.options "选项">
 <!ENTITY tabcontrol.focusLeft "关闭当前标签后激活左侧标签">
-<!ENTITY tabcontrol.posRight "定位新标签位置在当前标签右侧">
 <!ENTITY tabcontrol.leftRightGroup "In a left-to-right group">
 <!ENTITY tabcontrol.showQuitWarning "Show 'Save and Quit' warning dialog">
 <!ENTITY tabcontrol.searchInNewTab "Open all searches in a new tab">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "一个，在最右侧">
 <!ENTITY tabcontrol.closeButtons.all "许多，在所有标签上">
 <!ENTITY tabcontrol.closeButtons.none "无">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

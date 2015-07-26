@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Tab Control">
 <!ENTITY tabcontrol.options "Nastavenia">
 <!ENTITY tabcontrol.focusLeft "Preniesť do popredia kartu naľavo od práve zatváranej">
-<!ENTITY tabcontrol.posRight "Umiestniť novú kartu napravo od aktuálnej">
 <!ENTITY tabcontrol.leftRightGroup "V skupine zľava-doprava">
 <!ENTITY tabcontrol.showQuitWarning "Show 'Save and Quit' warning dialog">
 <!ENTITY tabcontrol.searchInNewTab "Otvárať všetky vyhľadávania na novej karte">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "Jedno, napravo">
 <!ENTITY tabcontrol.closeButtons.all "Viac, na všetkých kartách">
 <!ENTITY tabcontrol.closeButtons.none "Žiadne">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

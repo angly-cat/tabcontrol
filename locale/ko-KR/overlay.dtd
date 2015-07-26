@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "탭 제어">
 <!ENTITY tabcontrol.options "선택사항">
 <!ENTITY tabcontrol.focusLeft "현재 탭을 닫으면 왼쪽탭을 사용">
-<!ENTITY tabcontrol.posRight "현재 탭의 오른쪽에 새 탭을 위치">
 <!ENTITY tabcontrol.leftRightGroup "그룹의 왼쪽에서 오른쪽으로">
 <!ENTITY tabcontrol.showQuitWarning "Show 'Save and Quit' warning dialog">
 <!ENTITY tabcontrol.searchInNewTab "새 탭으로 모든 검색 열기">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "오른쪽 탭">
 <!ENTITY tabcontrol.closeButtons.all "모든 탭">
 <!ENTITY tabcontrol.closeButtons.none "없음">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

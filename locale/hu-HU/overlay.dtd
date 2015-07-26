@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Tab Control">
 <!ENTITY tabcontrol.options "Beállítások">
 <!ENTITY tabcontrol.focusLeft "Lap bezárásakor a tőle balra levő előtérbe helyezése">
-<!ENTITY tabcontrol.posRight "Új lap elhelyezése a jelenlegi laptól balra">
 <!ENTITY tabcontrol.leftRightGroup "Csoportban balról jobbra">
 <!ENTITY tabcontrol.showQuitWarning "'Mentés és Kilépés' figyelmeztető ablak megjelenítése">
 <!ENTITY tabcontrol.searchInNewTab "Mindegyik keresés megnyitása új lapon">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "Egy, jobbra">
 <!ENTITY tabcontrol.closeButtons.all "Sok, minden lapon">
 <!ENTITY tabcontrol.closeButtons.none "Nincs bezárás gomb">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Tab Control">
 <!ENTITY tabcontrol.options "Opciones">
 <!ENTITY tabcontrol.focusLeft "Enfocar pestaña a la izquierda tras cerrar la actual">
-<!ENTITY tabcontrol.posRight "Colocar las nuevas pestañas a la derecha de la actual">
 <!ENTITY tabcontrol.leftRightGroup "En un grupo de izquierda a derecha">
 <!ENTITY tabcontrol.showQuitWarning "Mostrar el diálogo de &quot;Guardar y salir&quot;">
 <!ENTITY tabcontrol.searchInNewTab "Abrir todas las búsquedas en nueva pestaña">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "Uno, a la derecha">
 <!ENTITY tabcontrol.closeButtons.all "Muchos, en todas las pestañas">
 <!ENTITY tabcontrol.closeButtons.none "Ninguno">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

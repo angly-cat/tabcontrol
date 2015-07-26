@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Tab Control">
 <!ENTITY tabcontrol.options "אפשרויות">
 <!ENTITY tabcontrol.focusLeft "התמקדות בלשונית שמאלית בסגירת לשונית נוכחית">
-<!ENTITY tabcontrol.posRight "מיקום לשוניות חדשות מימין ללשונית הנוכחית">
 <!ENTITY tabcontrol.leftRightGroup "בקבוצת שמאל לימין">
 <!ENTITY tabcontrol.showQuitWarning "הצגת הודעת האזהרה 'שמירה ויציאה'">
 <!ENTITY tabcontrol.searchInNewTab "פתיחת כל החיפושים בלשונית חדשה">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "אחד, בשמאל">
 <!ENTITY tabcontrol.closeButtons.all "הרבה, על כל הלשוניות">
 <!ENTITY tabcontrol.closeButtons.none "אף אחד">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

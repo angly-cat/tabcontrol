@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Контролисање језичака">
 <!ENTITY tabcontrol.options "Опције">
 <!ENTITY tabcontrol.focusLeft "Када затворим последњи језичак, пребаци на леви">
-<!ENTITY tabcontrol.posRight "Постави нове језичне десно од тренутног">
 <!ENTITY tabcontrol.leftRightGroup "У групи слева надесно">
 <!ENTITY tabcontrol.showQuitWarning "Прикажи прозор „Сачувај и изађи”">
 <!ENTITY tabcontrol.searchInNewTab "Све претраге отварај у новим језичцима">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "једно, на десном крају">
 <!ENTITY tabcontrol.closeButtons.all "на сваком језичку по једно">
 <!ENTITY tabcontrol.closeButtons.none "ни једно">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

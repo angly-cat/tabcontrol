@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Tab Control">
 <!ENTITY tabcontrol.options "- ustawienia">
 <!ENTITY tabcontrol.focusLeft "Gdy zamykasz aktywną kartę, uaktywnij kartę po lewej stronie">
-<!ENTITY tabcontrol.posRight "Nowe karty otwieraj po prawej stronie aktywnej karty">
 <!ENTITY tabcontrol.leftRightGroup "W grupie od lewej do prawej">
 <!ENTITY tabcontrol.showQuitWarning "Wyświetlaj ostrzeżenie o zamknięciu kart">
 <!ENTITY tabcontrol.searchInNewTab "Otwieraj wyniki wyszukiwania w nowych kartach">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "na pasku kart po prawej stronie">
 <!ENTITY tabcontrol.closeButtons.all "na wszystkich kartach">
 <!ENTITY tabcontrol.closeButtons.none "- bez przycisków">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

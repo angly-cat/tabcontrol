@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Tab Control">
 <!ENTITY tabcontrol.options "Επιλογές">
 <!ENTITY tabcontrol.focusLeft "Εστίαση στην αριστερή καρτέλα όταν κλείσει η τρέχουσα">
-<!ENTITY tabcontrol.posRight "Τοποθέτηση νέων καρτελών δεξιά της τρέχουσας">
 <!ENTITY tabcontrol.leftRightGroup "Ομαδοποιημένες αριστερά προς δεξιά">
 <!ENTITY tabcontrol.showQuitWarning "Προβολή προειδοποίησης για «Αποθήκευση και έξοδο»">
 <!ENTITY tabcontrol.searchInNewTab "Άνοιγμα όλων των αναζητήσεων σε νέες καρτέλες">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "Ένα, στο δεξί μέρος">
 <!ENTITY tabcontrol.closeButtons.all "Πολλά, σε όλες τις καρτέλες">
 <!ENTITY tabcontrol.closeButtons.none "Κανένα">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">

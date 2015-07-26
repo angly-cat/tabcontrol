@@ -22,7 +22,7 @@
     />
     <separator class="thin" />
 
-    <checkbox id='posRightOnAdd' prefstring='browser.tabs.insertRelatedAfterCurrent'
+    <checkbox id='insertRelatedAfterCurrent' prefstring='browser.tabs.insertRelatedAfterCurrent'
       label='&tabcontrol.insertRelatedAfterCurrent;'
     />
     <hbox>
@@ -30,7 +30,7 @@
       <checkbox id='leftRightGroup' prefstring='tabcontrol.leftRightGroup'
         label='&tabcontrol.leftRightGroup;'
       />
-      <checkbox id='leftRightGroup' prefstring='extensions.tabcontrol.insertUnrelatedAfterCurrent'
+      <checkbox id='insertUnrelatedAfterCurrent' prefstring='extensions.tabcontrol.insertUnrelatedAfterCurrent'
         label='&tabcontrol.insertUnrelatedAfterCurrent;'
       />
     </hbox>

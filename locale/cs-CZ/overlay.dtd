@@ -12,7 +12,6 @@
 <!ENTITY tabcontrol.title "Tab Control">
 <!ENTITY tabcontrol.options "Možnosti">
 <!ENTITY tabcontrol.focusLeft "Při zavírání aktuálního panelu přejít na panel vlevo">
-<!ENTITY tabcontrol.posRight "Umisťovat nové panely napravo od aktuálního panelu">
 <!ENTITY tabcontrol.leftRightGroup "In a left-to-right group">
 <!ENTITY tabcontrol.showQuitWarning "Show 'Save and Quit' warning dialog">
 <!ENTITY tabcontrol.searchInNewTab "Open all searches in a new tab">
@@ -22,3 +21,5 @@
 <!ENTITY tabcontrol.closeButtons.right "Jedno, vpravo">
 <!ENTITY tabcontrol.closeButtons.all "Na všech panelech">
 <!ENTITY tabcontrol.closeButtons.none "Žádné">
+<!ENTITY tabcontrol.insertRelatedAfterCurrent "Insert related tabs after current">
+<!ENTITY tabcontrol.insertUnrelatedAfterCurrent "Insert unrelated tabs after current as well">
