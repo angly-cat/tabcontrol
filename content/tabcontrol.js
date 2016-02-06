@@ -49,6 +49,16 @@ onSessionReady: function(aEvent) {
 },
 
 onTabClose: function(aEvent) {
+	// START: Compatibility with Tab Groups (tabgroups@quicksaver) add-on
+	if (   window.hasOwnProperty('TabView')
+	    && window.TabView.hasOwnProperty('isVisible')
+	    && window.TabView.isVisible()
+	) {
+		// Do nothing on tab close if groups mode is active.
+		return;
+	}
+	// END: Compatibility with Tab Groups (tabgroups@quicksaver) add-on
+
 	var tab = aEvent.target,
 	    visibleTabs = gBrowser.visibleTabs,
 	    visibleTabsCount = visibleTabs.length;
