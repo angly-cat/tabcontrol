@@ -77,9 +77,6 @@ onTabOpen:function(aEvent) {
 		if (    tab.owner &&  gTabControl.getPref('bool', 'extensions.tabcontrol.insertUnrelatedAfterCurrent')
 		    || !tab.owner && !gTabControl.getPref('bool', 'tabcontrol.leftRightGroup')) {
 			gBrowser.moveTabTo(tab, gBrowser.mCurrentTab.nextSibling._tPos);
-
-			// Compatibility fix with CoLoUnREaDTabs. (#152)
-			tab.removeAttribute('selected');
 		}
 	}
 
