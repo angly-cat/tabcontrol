@@ -3,7 +3,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>{39952c40-5197-11da-8cd6-0800200c9a66}</em:id>
     <em:name>Tab Control</em:name>
-    <em:version>0.7.8.1</em:version>
+    <em:version>0.7.8.2</em:version>
     <em:type>2</em:type>
 
     <em:creator>Anthony Lieuallen</em:creator>
