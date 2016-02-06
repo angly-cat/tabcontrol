@@ -1,63 +1,69 @@
-var gTabControl={
+var gTabControl = {
 /********************************* VARIABLES *********************************/
 
 prefObj: Components.classes['@mozilla.org/preferences-service;1']
-         .getService(Components.interfaces.nsIPrefBranch),
+                   .getService(Components.interfaces.nsIPrefBranch),
 sessionRestoring: false,
 
 /****************************** EVENT LISTENERS ******************************/
 
-onLoad:function() {
+onLoad: function() {
 	window.removeEventListener('load', gTabControl.onLoad, false);
 
 	// In options window, no gBrowser, no need to do the rest.
-	if ('undefined'==typeof gBrowser) return;
+	if (typeof gBrowser === 'undefined') {
+		return;
+	}
 
 	window.addEventListener('unload', gTabControl.onUnload, false);
 
 	var container = gBrowser.tabContainer;
-	container.addEventListener("TabClose", gTabControl.onTabClose, false);
-	container.addEventListener("TabOpen", gTabControl.onTabOpen, false);
+	container.addEventListener('TabClose', gTabControl.onTabClose, false);
+	container.addEventListener('TabOpen', gTabControl.onTabOpen, false);
 
-	window.addEventListener("SSWindowStateBusy", gTabControl.onSessionBusy, false);
-	window.addEventListener("SSWindowStateReady", gTabControl.onSessionReady, false);
+	window.addEventListener('SSWindowStateBusy', gTabControl.onSessionBusy, false);
+	window.addEventListener('SSWindowStateReady', gTabControl.onSessionReady, false);
 
 	/*var searchbar=document.getElementById('searchbar');
 	gTabControl.origHandleSearchCommand=searchbar.handleSearchCommand;
 	searchbar.handleSearchCommand=gTabControl.handleSearchCommand;*/
 },
 
-onUnload:function() {
+onUnload: function() {
 	window.removeEventListener('unload', gTabControl.onUnload, false);
+
 	var container = gBrowser.tabContainer;
-	container.removeEventListener("TabClose", gTabControl.onTabClose, false);
-	container.removeEventListener("TabOpen", gTabControl.onTabOpen, false);
-	window.removeEventListener("SSWindowStateBusy", gTabControl.onSessionBusy, false);
-	window.removeEventListener("SSWindowStateReady", gTabControl.onSessionReady, false);
+	container.removeEventListener('TabClose', gTabControl.onTabClose, false);
+	container.removeEventListener('TabOpen', gTabControl.onTabOpen, false);
+
+	window.removeEventListener('SSWindowStateBusy', gTabControl.onSessionBusy, false);
+	window.removeEventListener('SSWindowStateReady', gTabControl.onSessionReady, false);
 },
 
-onSessionBusy:function(aEvent) {
+onSessionBusy: function(aEvent) {
 	gTabControl.sessionRestoring = true;
 },
 
-onSessionReady:function(aEvent) {
+onSessionReady: function(aEvent) {
 	gTabControl.sessionRestoring = false;
 },
 
-onTabClose:function(aEvent) {
+onTabClose: function(aEvent) {
 	var tab = aEvent.target,
 	    visibleTabs = gBrowser.visibleTabs,
 	    visibleTabsCount = visibleTabs.length;
 	// If we're configured to, focus left tab.
-	if (gTabControl.getPref('bool', 'tabcontrol.focusLeftOnClose')
+	if (   gTabControl.getPref('bool', 'tabcontrol.focusLeftOnClose')
 	    && gBrowser.mCurrentTab == tab
 	    // If there are tabs to select.
 	    && visibleTabsCount
 	) {
-		// gBrowser.visibleTabs is an array of all visible tabs, i.e. all pinned tabs and all tabs from the current tab group.
+		// gBrowser.visibleTabs is an array of all visible tabs, i.e. all
+		// pinned tabs and all tabs from the current tab group.
 
-		// Each tab has _tPos index (>= 0). All pinned tabs has _tPos indexes started from 0: [0..n],
-		// then tabs from the first tab group has indexes [n+1..m] etc.
+		// Each tab has _tPos index (>= 0). All pinned tabs has _tPos indexes
+		// started from 0: [0..n], then tabs from the first tab group has
+		// indexes [n+1..m] etc.
 		var newIndex = 0;
 		while (newIndex < visibleTabsCount && visibleTabs[newIndex]._tPos <= tab._tPos) {
 			newIndex++;
@@ -66,29 +72,31 @@ onTabClose:function(aEvent) {
 	}
 },
 
-
-onTabOpen:function(aEvent) {
-	if (gTabControl.sessionRestoring) return;
-	var tab = aEvent.target;
-
-	//shift the new tab into position
-	if (gTabControl.getPref('bool', 'browser.tabs.insertRelatedAfterCurrent')) {
-		// Tabs with owner property - unrelated, without - related.
-		if (    tab.owner &&  gTabControl.getPref('bool', 'extensions.tabcontrol.insertUnrelatedAfterCurrent')
-		    || !tab.owner && !gTabControl.getPref('bool', 'tabcontrol.leftRightGroup')) {
-			gBrowser.moveTabTo(tab, gBrowser.mCurrentTab.nextSibling._tPos);
-		}
+onTabOpen: function(aEvent) {
+	if (gTabControl.sessionRestoring || !gTabControl.getPref('bool', 'browser.tabs.insertRelatedAfterCurrent')) {
+		return;
 	}
 
+	var tab = aEvent.target,
+	    isRelated = !tab.owner;
+
+	// Firefox does left-in-right groupping by default, so the add-on overrides
+	// it's behavior when 'In a left-to-right group' option is disabled.
+	if (  !isRelated &&  gTabControl.getPref('bool', 'extensions.tabcontrol.insertUnrelatedAfterCurrent')
+	    || isRelated && !gTabControl.getPref('bool', 'tabcontrol.leftRightGroup')
+	) {
+		gBrowser.moveTabTo(tab, gBrowser.mCurrentTab._tPos + 1);
+	}
 },
 
 /****************************** TAB MANIPULATION *****************************/
 
-handleSearchCommand:function(aEvent) {
-	var searchbar=document.getElementById('searchbar');
+handleSearchCommand: function(aEvent) {
+	var searchbar = document.getElementById('searchbar');
 
-	if ('keypress'==aEvent.type
-			&& 13==aEvent.which && aEvent.ctrlKey
+	if (   aEvent.type === 'keypress'
+	    && aEvent.which === 13
+	    && aEvent.ctrlKey
 	) {
 		//specifically open search in new tab
 		searchbar.doSearch(searchbar._textbox.value, 'tab');
@@ -100,19 +108,20 @@ handleSearchCommand:function(aEvent) {
 
 /******************************** PREFERENCES ********************************/
 
-getPref:function(aType, aName) {
+getPref: function(aType, aName) {
 	try {
-		switch(aType) {
+		switch (aType) {
 		case 'bool':   return this.prefObj.getBoolPref(aName);
 		case 'int':    return this.prefObj.getIntPref(aName);
 		case 'string':
 		default:       return this.prefObj.getCharPref(aName);
 		}
-	} catch (e) { }
+	} catch (e) {}
+
 	return '';
 },
 
-setPref:function(aType, aName, aValue) {
+setPref: function(aType, aName, aValue) {
 	try {
 		switch (aType) {
 		case 'bool':   this.prefObj.setBoolPref(aName, aValue); break;
@@ -120,55 +129,55 @@ setPref:function(aType, aName, aValue) {
 		case 'string':
 		default:       this.prefObj.setCharPref(aName, aValue); break;
 		}
-	} catch (e) {  }
+	} catch (e) {}
 },
 
-loadOptions:function() {
+loadOptions: function() {
 	//checkboxes
-	var checks=window.document.getElementsByTagName('checkbox');
-	for (var i=0; checks[i]; i++) {
+	var checks = window.document.getElementsByTagName('checkbox');
+	for (var i = 0; checks[i]; i++) {
 		try {
-			checks[i].checked=gTabControl.getPref('bool', checks[i].getAttribute('prefstring'));
-		} catch (e) {  }
+			checks[i].checked = gTabControl.getPref('bool', checks[i].getAttribute('prefstring'));
+		} catch (e) {}
 	}
 
 	//dropdowns
-	var drops=window.document.getElementsByTagName('menulist');
-	for (var i=0; drops[i]; i++) {
+	var drops = window.document.getElementsByTagName('menulist');
+	for (var i = 0; drops[i]; i++) {
 		try {
-			drops[i].selectedItem=drops[i].getElementsByAttribute(
+			drops[i].selectedItem = drops[i].getElementsByAttribute(
 				'value',
 				gTabControl.getPref('int', drops[i].getAttribute('prefstring'))
 			)[0];
-		} catch (e) {  }
+		} catch (e) {}
 	}
 
 	return true;
 },
 
-saveOptions:function() {
+saveOptions: function() {
 	//checkboxes
-	var checks=window.document.getElementsByTagName('checkbox');
-	for (var i=0; checks[i]; i++) {
+	var checks = window.document.getElementsByTagName('checkbox');
+	for (var i = 0; checks[i]; i++) {
 		try {
 			gTabControl.setPref(
 				'bool',
 				checks[i].getAttribute('prefstring'),
 				checks[i].checked
 			);
-		} catch (e) {  }
+		} catch (e) {}
 	}
 
 	//dropdowns
-	var drops=window.document.getElementsByTagName('menulist');
-	for (var i=0; drops[i]; i++) {
+	var drops = window.document.getElementsByTagName('menulist');
+	for (var i = 0; drops[i]; i++) {
 		try {
 			gTabControl.setPref(
 				'int',
 				drops[i].getAttribute('prefstring'),
 				drops[i].selectedItem.value
 			);
-		} catch (e) {  }
+		} catch (e) {}
 	}
 
 	return true;
